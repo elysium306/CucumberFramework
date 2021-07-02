@@ -5,10 +5,10 @@
 	<groupId>sdet</groupId>
 	<artifactId>seleniumCucumberFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<properties>
-	<maven.compiler.source>15</maven.compiler.source>
-	<maven.compiler.target>15</maven.compiler.target>
+		<maven.compiler.source>15</maven.compiler.source>
+		<maven.compiler.target>15</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -45,5 +45,26 @@
 		</dependency>
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<testFailureIgnore>false</testFailureIgnore>
+					<includes>
+						<include>**/SmokeTestRunner.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
