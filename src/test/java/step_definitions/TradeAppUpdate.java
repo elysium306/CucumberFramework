@@ -14,7 +14,7 @@ import utilities.BrowserUtils;
 import utilities.Driver;
 import utilities.PropertiesReader;
 
-public class TradeAppAddTrade {
+public class TradeAppUpdate {
 	
 	BrowserUtils utils = new BrowserUtils();
 	TradeAppPage tradepage = new TradeAppPage();
