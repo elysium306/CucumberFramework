@@ -2,10 +2,10 @@ Feature: Add Trade
   User is able to add delete edit the trade logs
   
   
-  @addTrade
+  @UpdateTrade
   Scenario: As a user, I should be able to log my trade
     Given I am on the app log in page
-    When I enter valid username "helil" and password "SuperHelil123!"
+    When I enter valid username "Mamatweli" and password "SuperMamatweli123!"
     And I click on trade signin button
     Then I should be in the trade homepage
     When I click on Add Trade button
@@ -18,10 +18,10 @@ Feature: Add Trade
     # we are going to create couple different scenarios to understand the difference between
     # the cucumber data tables with data passing in the steps
     
-    @addTradeWithDatatable
+    @UpdateTradeWithDatatable
   Scenario: As a user, I should be able to log my trade
     Given I am on the app log in page
-    When I enter valid username "helil" and password "SuperHelil123!"
+    When I enter valid username "Mamatweli" and password "SuperMamatweli123!"
     And I click on trade signin button
     Then I should be in the trade homepage
     When I click on Add Trade button
