@@ -7,9 +7,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AmazonPage;
-import utilities.BrowserUtils;
-import utilities.Driver;
-import utilities.PropertiesReader;
+import utils.BrowserUtils;
+import utils.Driver;
+import utils.PropertiesReader;
 
 public class AmazonLogin {
 	
