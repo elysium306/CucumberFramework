@@ -2,6 +2,8 @@ package utils;
 
 import java.time.Duration;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
