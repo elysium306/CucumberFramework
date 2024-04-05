@@ -1,0 +1,10 @@
+### compiled files
+/target/
+
+### built files
+.settings
+.classpath
+.project
+
+### reports and logs
+reports
