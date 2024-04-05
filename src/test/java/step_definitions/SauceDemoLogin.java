@@ -7,8 +7,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.SauceDemoPage;
-import utilities.BrowserUtils;
-import utilities.Driver;
+import utils.BrowserUtils;
+import utils.Driver;
 
 public class SauceDemoLogin {
 	

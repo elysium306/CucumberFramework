@@ -1,4 +1,6 @@
-package utilities;
+package utils;
+
+import java.time.Duration;
 
 import java.time.Duration;
 
