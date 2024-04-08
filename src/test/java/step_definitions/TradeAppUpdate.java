@@ -12,7 +12,7 @@ import io.cucumber.java.en.When;
 import pages.TradeAppPage;
 import utils.BrowserUtils;
 import utils.Driver;
-import utils.PropertiesReader;
+import utils.PropertyReader;
 
 public class TradeAppUpdate {
 	
@@ -23,7 +23,7 @@ public class TradeAppUpdate {
 	
 	@Given("I am on the app log in page")
 	public void i_am_on_the_app_log_in_page() {
-	    Driver.getDriver().get(PropertiesReader.getProperty("tradeAppUrl"));
+	    Driver.getDriver().get(PropertyReader.getProperty("tradeAppUrl"));
 	    utils.waitUntilElementVisible(tradepage.username);
 	    Assert.assertTrue(tradepage.username.isDisplayed());
 	}
