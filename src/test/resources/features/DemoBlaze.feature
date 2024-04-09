@@ -16,27 +16,15 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@Integration
 Feature: Test the login functionality on <demoblaze.com> website
   I want to use test how to demo the login to this page
 
-  @tag1
-  Scenario: Title of your scenario
-    Given I want to write a step with precondition
-    And some other precondition
-    When I complete action
-    And some other action
-    And yet another action
-    Then I validate the outcomes
-    And check more outcomes
-
-  @tag2
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
-
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  @Smoke
+  Scenario: DemoBlaze Login Test
+    Given I went to demoblaze landing page
+    And Clicked on login option
+    When I enter username and password
+    And Clicked on signin button
+    Then Logout option should be available
+    And welcome message should be displayed

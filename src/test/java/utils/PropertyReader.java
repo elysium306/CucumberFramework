@@ -2,17 +2,19 @@ package utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class PropertyReader {
-	
-private static Properties config;
 
-	
+	private static Properties config;
+
 	static {
-		
+
 		try {
-			File file = new File("./src/test/resources/env_variables/env_variables.properties");
+			Path path = Paths.get(System.getProperty("user.dir"), "/src/test/resources/configs/", "config.properties");
+			File file = new File(path.toString());
 			FileInputStream input = new FileInputStream(file);
 			config = new Properties();
 			config.load(input);
@@ -21,10 +23,8 @@ private static Properties config;
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static String getProperty(String key) {
 		return config.getProperty(key);
 	}
-	
-
 }
