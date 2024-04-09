@@ -25,7 +25,7 @@ public class Driver {
 
 	public static WebDriver getDriver() {
 
-		String browser = System.getProperty("browser") == null ? PropertiesReader.getProperty("browser")
+		String browser = System.getProperty("browser") == null ? PropertyReader.getProperty("browser")
 				: System.getProperty("browser");
 		System.out.println("--- Current Browser Type: " + browser);
 

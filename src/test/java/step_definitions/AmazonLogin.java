@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import pages.AmazonPage;
 import utils.BrowserUtils;
 import utils.Driver;
-import utils.PropertiesReader;
+import utils.PropertyReader;
 
 public class AmazonLogin {
 	
@@ -19,7 +19,7 @@ public class AmazonLogin {
 	
 	@Given("I am on the amazon homepage")
 	public void i_am_on_the_amazon_homepage() {
-	    Driver.getDriver().get(PropertiesReader.getProperty("amazonURL"));
+	    Driver.getDriver().get(PropertyReader.getProperty("amazonURL"));
 	}
 
 	@Then("Sign in button is displayed")
@@ -43,7 +43,7 @@ public class AmazonLogin {
 	
 	@Given("I am on the amazon signin page")
 	public void i_am_on_the_amazon_signin_page() {
-		Driver.getDriver().get(PropertiesReader.getProperty("amazonURL"));
+		Driver.getDriver().get(PropertyReader.getProperty("amazonURL"));
 		amazonpage.signinSecurelyBtn.click();
 		utils.waitUntilElementVisible(amazonpage.signInText);
 		Assert.assertTrue(amazonpage.signInText.isDisplayed()); 
