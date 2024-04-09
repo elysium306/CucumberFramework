@@ -9,3 +9,6 @@
 ### reports and logs
 reports
 bin
+
+# ignore config files
+src/test/resources/configs/config.properties
