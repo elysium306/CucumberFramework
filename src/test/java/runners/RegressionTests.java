@@ -6,13 +6,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		plugin = {"pretty", "html:Reports/htmlReport.html",
-		"json:Reports/jsonReport.json"},
+		tags="@Regression",
 		features="./src/test/resources/features",
-		glue="step_definitions",
-		dryRun=false,
-		tags="@Regression"
-		)
-public class RegressionTestRunner {
-
+		glue="steps",
+		plugin = {"pretty", "html:reports/regression_pretty.html","json:reports/regression_pretty.json"},
+		monochrome = true)
+public class RegressionTests {
 }

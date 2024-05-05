@@ -1,4 +1,4 @@
-package step_definitions;
+package steps;
 
 import static org.junit.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;

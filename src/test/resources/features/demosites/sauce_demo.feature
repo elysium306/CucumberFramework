@@ -1,9 +1,8 @@
 @Regression
 Feature: Sauce Demo login tests
 
-Background: 
+  Background: 
     Given I am on the login page
-
 
   @SauceValidLogin @SmokeTest
   Scenario: Login Valid test
@@ -21,3 +20,7 @@ Background:
 
   @SmokeTest
   Scenario: Validate all the web elements on login page
+    When user enters username
+    And user enters password
+    And user clicks on login
+    Then user should see confirmation message
