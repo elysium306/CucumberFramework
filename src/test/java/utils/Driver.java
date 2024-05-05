@@ -2,14 +2,15 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+import io.github.bonigarcia.wdm.managers.EdgeDriverManager;
 import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
-import io.github.bonigarcia.wdm.managers.InternetExplorerDriverManager;
+import io.github.bonigarcia.wdm.managers.SafariDriverManager;
 
 public class Driver {
 
@@ -35,11 +36,12 @@ public class Driver {
 				FirefoxDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
 				break;
-			case "ie":
-				InternetExplorerDriverManager.iedriver().setup();
-				driver = new InternetExplorerDriver();
+			case "edge":
+				EdgeDriverManager.edgedriver().setup();
+				driver = new EdgeDriver();
 				break;
 			case "safari":
+				SafariDriverManager.safaridriver().setup();
 				driver = new SafariDriver();
 				break;
 			case "chrome":

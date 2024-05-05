@@ -7,10 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		tags = "@Smoke",
-		features="./src/test/resources/features/DemoBlaze.feature",
+		dryRun = true,
+		features="./src/test/resources/features/demosites",
 		glue="steps",
-		plugin = {"pretty", "html:./reports/smoke_pretty.html", "json:./reports/smoke_pretty.json"},
+		plugin = {"pretty", "html:./reports/demosites_pretty.html", "json:./reports/demosites_pretty.json"},
 		monochrome = true)
-public class DemoBlazeTests {
+public class DemositesTests {
 }

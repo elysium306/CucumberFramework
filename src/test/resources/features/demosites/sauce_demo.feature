@@ -20,3 +20,7 @@ Feature: Sauce Demo login tests
 
   @SmokeTest
   Scenario: Validate all the web elements on login page
+    When user enters username
+    And user enters password
+    And user clicks on login
+    Then user should see confirmation message
