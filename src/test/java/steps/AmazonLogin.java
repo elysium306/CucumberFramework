@@ -34,8 +34,8 @@ public class AmazonLogin {
 
 	@Then("I should be directed to login page")
 	public void i_should_be_directed_to_login_page() {
-	    utils.waitUntilElementVisible(amazonpage.signInText);
-	    Assert.assertTrue(amazonpage.signInText.isDisplayed());
+	    utils.waitUntilElementVisible(amazonpage.signinText);
+	    Assert.assertTrue(amazonpage.signinText.isDisplayed());
 	}
 	
 	
@@ -45,30 +45,30 @@ public class AmazonLogin {
 	public void i_am_on_the_amazon_signin_page() {
 		Driver.getDriver().get(PropertyReader.getProperty("amazonURL"));
 		amazonpage.signinSecurelyBtn.click();
-		utils.waitUntilElementVisible(amazonpage.signInText);
-		Assert.assertTrue(amazonpage.signInText.isDisplayed()); 
+		utils.waitUntilElementVisible(amazonpage.signinText);
+		Assert.assertTrue(amazonpage.signinText.isDisplayed()); 
 	}
 	
 	@When("I enter invalid user email {string}")
 	public void i_enter_invalid_user_email(String invalidUserEmail) {
-	    amazonpage.signInEmailField.sendKeys(invalidUserEmail);
+	    amazonpage.signinEmailField.sendKeys(invalidUserEmail);
 	}
 	
 	@And("I clicked on continue button")
 	public void i_clicked_on_continue_button() {
-	   amazonpage.signInContinueBtn.click();
+	   amazonpage.signinContinueBtn.click();
 	}
 	
 	@Then("An error message {string} should display")
 	public void an_error_message_should_display(String errorMessage) {
-	   utils.waitUntilElementVisible(amazonpage.signInErrorMessageHeader);
-	   String actualErrorMessageHeader = amazonpage.signInErrorMessageHeader.getText();
+	   utils.waitUntilElementVisible(amazonpage.signinErrorMessageHeader);
+	   String actualErrorMessageHeader = amazonpage.signinErrorMessageHeader.getText();
 	   Assert.assertEquals(actualErrorMessageHeader, errorMessage);
 	}
 	
 	@But("The password field should not display")
 	public void the_password_field_should_not_display() {
-	    Assert.assertFalse(utils.isElementPresent(amazonpage.signInPasswordField));
+	    Assert.assertFalse(utils.isElementPresent(amazonpage.signinPasswordField));
 	}
 
 	

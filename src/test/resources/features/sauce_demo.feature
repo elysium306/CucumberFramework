@@ -1,9 +1,8 @@
 @Regression
 Feature: Sauce Demo login tests
 
-Background: 
+  Background: 
     Given I am on the login page
-
 
   @SauceValidLogin @SmokeTest
   Scenario: Login Valid test

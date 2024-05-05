@@ -11,5 +11,5 @@ import io.cucumber.junit.CucumberOptions;
 		glue="steps",
 		plugin = {"pretty", "html:reports/regression_pretty.html","json:reports/regression_pretty.json"},
 		monochrome = true)
-public class RegressionTestRunner {
+public class RegressionTests {
 }
