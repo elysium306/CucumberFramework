@@ -12,5 +12,5 @@ import io.cucumber.junit.CucumberOptions;
 		glue="steps",
 		plugin = {"pretty", "html:./reports/smoke_pretty.html", "json:./reports/smoke_pretty.json"},
 		monochrome = true)
-public class DemoBlazeRunner {
+public class DemoBlazeTests {
 }

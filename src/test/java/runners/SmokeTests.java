@@ -11,5 +11,5 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "steps", plugin = { "pretty",
 		"html:Reports/htmlReport.html", "json:Reports/jsonReport.json" }, 
 		monochrome = true)
-public class SmokeTestRunner {
+public class SmokeTests {
 }
