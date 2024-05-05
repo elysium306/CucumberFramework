@@ -10,7 +10,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import utils.Driver;
 
-public class Hook {
+public class Hooks {
 	
 	@Before
 	public void setUp() {
