@@ -9,9 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		dryRun = true, 
 		features = "./src/test/resources/features", 
-		glue = "step_definitions", 
-		plugin = {
-		"pretty", "html:./reports/dryrun_pretty.html", "json:./reports/dryrun_pretty.json" }, 
+		glue = "steps", 
+		plugin = {"pretty", "html:./reports/dryrun_pretty.html", "json:./reports/dryrun_pretty.json" }, 
 		monochrome = true)
 public class DryRunner {
 }
