@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		dryRun = true, 
 		features = "src/test/resources/features/demosites/login.feature", 
 		glue = "steps", 
-		plugin = {"pretty", "html:./target/DryRunner.html", "json:./target/DryRunner.json", "junit:./target/DryRunner.xml" }, 
+		plugin = {"pretty", "html:./target/cucumber-reports/DryRunner.html", "json:./target/cucumber-reports/DryRunner.json", "junit:./target/cucumber-reports/DryRunner.xml" }, 
 		monochrome = true)
 public class TestDryRunner {
 	// steps
