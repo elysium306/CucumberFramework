@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 		tags = "@Integration", 
 		features = "./src/test/resources/features", 
 		glue = "steps", 
-		plugin = { "pretty", "html:reports/integration_pretty.html", "json:reports/integration_pretty.json" }, 
+		plugin = {"pretty", "html:./target/IntegrationTests.html", "json:./target/IntegrationTests.json", "junit:./target/IntegrationTests.xml" }, 
 		monochrome = true)
 public class IntegrationTests {
 }
