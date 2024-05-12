@@ -1,21 +1,15 @@
 package runners;
 
 import org.junit.runner.RunWith;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		tags = "@UpdateTradeWithDatatable", 
+		tags = "@Integration", 
 		features = "./src/test/resources/features", 
 		glue = "steps", 
-		plugin = {
-		"pretty", "html:Reports/htmlReport.html", "json:Reports/jsonReport.json" }, 
+		plugin = { "pretty", "html:reports/integration_pretty.html", "json:reports/integration_pretty.json" }, 
 		monochrome = true)
-public class TestRunner {
-
-	// dryRun = we are telling to cucumber to run only the scenario steps, not the
-	// implementation
-
+public class IntegrationTests {
 }

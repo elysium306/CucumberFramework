@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utils.Driver;
+import utils.Drivers;
 
 public class TradeAppPage {
 	
 	public TradeAppPage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Drivers.getDriver(), this);
 	}
 	
 	@FindBy(id = "username")

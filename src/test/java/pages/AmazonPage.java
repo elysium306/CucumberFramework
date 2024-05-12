@@ -4,12 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utils.Driver;
+import utils.Drivers;
 
 public class AmazonPage {
 
 	public AmazonPage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Drivers.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//a[@id='nav-link-accountList']")

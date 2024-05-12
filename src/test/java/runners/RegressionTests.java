@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 		tags="@Regression",
 		features="./src/test/resources/features",
 		glue="steps",
-		plugin = {"pretty", "html:reports/regression_pretty.html","json:reports/regression_pretty.json"},
+		plugin = {"pretty", "html:./target/RegressionTests.html", "json:./target/RegressionTests.json", "junit:./target/RegressionTests.xml" },
 		monochrome = true)
 public class RegressionTests {
 }

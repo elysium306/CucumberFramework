@@ -1,6 +1,7 @@
 package steps;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.But;
@@ -9,17 +10,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.AmazonPage;
 import utils.BrowserUtils;
-import utils.Driver;
+import utils.Drivers;
 import utils.PropertyReader;
 
-public class AmazonLogin {
+public class AmazonLoginSteps {
+	private WebDriver driver = Drivers.getDriver();
 
 	BrowserUtils utils = new BrowserUtils();
 	AmazonPage amazonHome = new AmazonPage();
 
 	@Given("I am on the amazon homepage")
 	public void i_am_on_the_amazon_homepage() {
-		Driver.getDriver().get(PropertyReader.getProperty("amazonURL"));
+		driver.get(PropertyReader.getProperty("amazonURL"));
 	}
 
 	@Then("Sign in button is displayed")
@@ -42,7 +44,7 @@ public class AmazonLogin {
 
 	@Given("I am on the amazon signin page")
 	public void i_am_on_the_amazon_signin_page() {
-		Driver.getDriver().get(PropertyReader.getProperty("amazonURL"));
+		driver.get(PropertyReader.getProperty("amazonURL"));
 		amazonHome.signinSecurelyBtn.click();
 		utils.waitUntilElementVisible(amazonHome.signinText);
 		Assert.assertTrue(amazonHome.signinText.isDisplayed());

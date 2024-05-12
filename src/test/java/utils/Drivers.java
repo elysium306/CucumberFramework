@@ -12,7 +12,7 @@ import io.github.bonigarcia.wdm.managers.EdgeDriverManager;
 import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
 import io.github.bonigarcia.wdm.managers.SafariDriverManager;
 
-public class Driver {
+public class Drivers {
 
 	/*
 	 * Driver class is reusable class for webDriver and it checks the webDriver on

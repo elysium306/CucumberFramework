@@ -17,7 +17,7 @@ public class BrowserUtils {
 	static Select letsSelect;
 
 	public void switchToAlert() {
-		alert = Driver.getDriver().switchTo().alert();
+		alert = Drivers.getDriver().switchTo().alert();
 	}
 
 	public String alertGetText() {
@@ -37,12 +37,12 @@ public class BrowserUtils {
 	}
 
 	public void waitUntilAlertIsPresent() {
-		letswait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+		letswait = new WebDriverWait(Drivers.getDriver(), Duration.ofSeconds(10));
 		letswait.until(ExpectedConditions.alertIsPresent());
 	}
 
 	public void waitUntilElementVisible(WebElement element) {
-		letswait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+		letswait = new WebDriverWait(Drivers.getDriver(), Duration.ofSeconds(10));
 		letswait.until(ExpectedConditions.visibilityOf(element));
 	}
 

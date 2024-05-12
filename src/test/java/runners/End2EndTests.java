@@ -1,16 +1,15 @@
 package runners;
 
 import org.junit.runner.RunWith;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		dryRun = true, 
+		tags = "@End2End", 
 		features = "./src/test/resources/features", 
 		glue = "steps", 
-		plugin = {"pretty", "html:./reports/dryrun_pretty.html", "json:./reports/dryrun_pretty.json" }, 
+				plugin = {"pretty", "html:./target/End2EndTests.html", "json:./target/End2EndTests.json", "junit:./target/End2EndTests.xml" }, 
 		monochrome = true)
-public class DryRunner {
+public class End2EndTests {
 }

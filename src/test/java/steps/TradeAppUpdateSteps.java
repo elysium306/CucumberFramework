@@ -3,27 +3,37 @@ package steps;
 import java.util.List;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.TradeAppPage;
 import utils.BrowserUtils;
-import utils.Driver;
+import utils.Drivers;
 import utils.PropertyReader;
 
-public class TradeAppUpdate {
+public class TradeAppUpdateSteps {
+	WebDriver driver;
 
-	BrowserUtils utils = new BrowserUtils();
-	TradeAppPage tradepage = new TradeAppPage();
+	BrowserUtils utils;
+	TradeAppPage tradepage;
 
 	String inputSymbol;
 
+	@Before
+	void init() {
+		driver = Drivers.getDriver();
+		utils = new BrowserUtils();
+		tradepage = new TradeAppPage();
+	}
+
 	@Given("I am on the app log in page")
 	public void i_am_on_the_app_log_in_page() {
-		Driver.getDriver().get(PropertyReader.getProperty("tradeAppUrl"));
+		driver.get(PropertyReader.getProperty("tradeAppUrl"));
 		utils.waitUntilElementVisible(tradepage.username);
 		Assert.assertTrue(tradepage.username.isDisplayed());
 	}

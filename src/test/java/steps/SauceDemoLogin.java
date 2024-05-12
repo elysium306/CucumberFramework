@@ -1,6 +1,7 @@
 package steps;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,17 +9,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.SauceDemoPage;
 import utils.BrowserUtils;
-import utils.Driver;
+import utils.Drivers;
 
 public class SauceDemoLogin {
+	WebDriver driver = Drivers.getDriver();
 
 	SauceDemoPage page = new SauceDemoPage();
 	BrowserUtils utils = new BrowserUtils();
 
-	// 1. Scenario 
+	// 1. Scenario
 	@Given("I am on the login page")
 	public void i_am_on_the_login_page() {
-		Driver.getDriver().get("https://www.saucedemo.com/");
+		driver.get("https://www.saucedemo.com/");
 	}
 
 	@When("I enter username {string} and password {string}")

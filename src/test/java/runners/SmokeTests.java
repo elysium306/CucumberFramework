@@ -8,8 +8,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		tags = "@SmokeTest", 
 		features = "./src/test/resources/features", 
-		glue = "steps", plugin = { "pretty",
-		"html:Reports/htmlReport.html", "json:Reports/jsonReport.json" }, 
+		glue = "steps", 
+				plugin = {"pretty", "html:./target/SmokeTests.html", "json:./target/SmokeTests.json", "junit:./target/SmokeTests.xml" }, 
 		monochrome = true)
 public class SmokeTests {
 }

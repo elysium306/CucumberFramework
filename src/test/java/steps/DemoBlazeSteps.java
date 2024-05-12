@@ -4,21 +4,24 @@ import static org.junit.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import base.BaseTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utils.Drivers;
 import utils.PropertyReader;
 
-public class DemoBlaze extends BaseTest {
+public class DemoBlazeSteps {
+	private WebDriver driver = Drivers.getDriver();
 
 	@Given("I went to demoblaze landing page")
 	public void i_want_to_write_a_step_with_precondition() {
 		driver.get(PropertyReader.getProperty("demoblaze"));
 		String title = driver.getTitle();
+		System.out.println("--- Actual Title: " + title);
 		assertNotNull(title, "Assert Title is not null");
 	}
 
