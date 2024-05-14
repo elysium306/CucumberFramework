@@ -12,6 +12,8 @@
 
 	<dependencies>
 
+		<!--
+		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -31,14 +33,6 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>7.17.0</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
-		<!--<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-jvm-deps</artifactId>
-			<version>1.0.6</version>
-			<scope>provided</scope>
-		</dependency>-->
 
 		<dependency>
 			<groupId>io.cucumber</groupId>

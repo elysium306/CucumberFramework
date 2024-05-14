@@ -1,5 +1,7 @@
 package utils;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -14,15 +16,15 @@ import io.github.bonigarcia.wdm.managers.SafariDriverManager;
 
 public class Drivers {
 
-	/*
+	private static WebDriver driver;
+
+	/**
 	 * Driver class is reusable class for webDriver and it checks the webDriver on
 	 * the system. If there isn't any driver on the system, it downloads the driver
 	 * and sets up the path and environment For this purpose, I've used WebDriver
 	 * manager And if I want to run my script on different browser, all I have to do
 	 * is change the browser name in the properties file.
 	 */
-
-	private static WebDriver driver;
 
 	public static WebDriver getDriver() {
 
@@ -50,15 +52,17 @@ public class Drivers {
 				driver = new ChromeDriver();
 			}
 		}
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		return driver;
 	}
 
-	public static void quitDriver() {
-		if (driver != null) {
-			driver.quit();
-			driver = null;
-		}
-	}
+//	public static void main(String[] args) {
+//		driver = getDriver();
+//		driver.get("https://selenium.dev");
+//		String actualTitle = driver.getTitle();
+//		System.out.println("*** Current Title: [" + actualTitle + "]");
+//		driver.close();
+//	}
 
 }

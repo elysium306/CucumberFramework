@@ -27,4 +27,11 @@ public class PropertyReader {
 	public static String getProperty(String key) {
 		return config.getProperty(key);
 	}
+
+	// to check if the config object is working properly
+//	public static void main(String[] args) {
+//		System.out.println("*** Browser Value: " + config.get("browser"));
+//		System.out.println("*** DemoBlaze: " + config.getProperty("demoblaze"));
+//	}
+
 }
