@@ -6,10 +6,14 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions( 
+@CucumberOptions(
+		dryRun = false, 
+		tags = "@DPDemo", 
 		features = "./src/test/resources/features", 
 		glue = "steps", 
-		plugin = {"pretty", "html:./target/cucumber-reports/TestCukeRunner.html", "json:./target/cucumber-reports/TestCukeRunner.json", "junit:./target/cucumber-reports/TestCukeRunner.xml" }, 
+		plugin = {
+		"pretty", "html:./target/cucumber-reports/TestCukeRunner.html",	"json:./target/cucumber-reports/TestCukeRunner.json",
+		"junit:./target/cucumber-reports/TestCukeRunner.xml" }, 
 		monochrome = true)
 public class TestCukeRunner {
 
