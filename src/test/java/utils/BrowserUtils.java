@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -16,28 +17,32 @@ public class BrowserUtils {
 	WebDriverWait letswait;
 	static Select letsSelect;
 
-	public void switchToAlert() {
-		alert = Drivers.getDriver().switchTo().alert();
+	public void switchToAlert(WebDriver driver) {
+		alert = driver.switchTo().alert();
 	}
 
-	public String alertGetText() {
+	public String alertGetText(WebDriver driver) {
+		switchToAlert(driver);
 		return alert.getText();
 	}
 
-	public void alertAccept() {
+	public void alertAccept(WebDriver driver) {
+		switchToAlert(driver);
 		alert.accept();
 	}
 
-	public void alertDismiss() {
+	public void alertDismiss(WebDriver driver) {
+		switchToAlert(driver);
 		alert.dismiss();
 	}
 
-	public void sendKeysOnAlert(String name) {
+	public void sendKeysOnAlert(WebDriver driver, String name) {
+		switchToAlert(driver);
 		alert.sendKeys(name);
 	}
 
-	public void waitUntilAlertIsPresent() {
-		letswait = new WebDriverWait(Drivers.getDriver(), Duration.ofSeconds(10));
+	public void waitUntilAlertIsPresent(WebDriver driver) {
+		letswait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		letswait.until(ExpectedConditions.alertIsPresent());
 	}
 
@@ -46,8 +51,8 @@ public class BrowserUtils {
 		letswait.until(ExpectedConditions.visibilityOf(element));
 	}
 
-	public void selectByVisibleText(WebElement element, String optionToSelect) {
-		letsSelect = new Select(element);
+	public void selectByVisibleText(WebElement selectElement, String optionToSelect) {
+		letsSelect = new Select(selectElement);
 		letsSelect.selectByVisibleText(optionToSelect);
 	}
 
